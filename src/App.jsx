@@ -1,4 +1,5 @@
 import "./App.css";
+import { Movies } from "./componentes/Movies";
 import withResults from "./mocks/withResults.json";
 import withoutresults from "./mocks/withoutresults.json";
 
@@ -18,15 +19,7 @@ function App() {
       </header>
       <main>
         {hasMovies ? (
-          <ul>
-            {movies.map((movie) => (
-              <li key={movie.imdbID}>
-                <h3>{movie.Title}</h3>
-                <p>{movie.Type}</p>
-                <img src={movie.Poster} alt={movie.Title} />
-              </li>
-            ))}
-          </ul>
+          <Movies movies={movies} />
         ) : (
           <h2>No existe el parámetro</h2>
         )}
